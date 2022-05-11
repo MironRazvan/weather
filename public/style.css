@@ -1,0 +1,203 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+#root, body {
+    min-height: 100vh;
+    background-image: url('https://s7d2.scene7.com/is/image/TWCNews/clouds_from_above');
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header-container {
+    width: 100%;
+    background-color: pink;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 1rem;
+    background: rgb(51,0,124);
+    background: linear-gradient(90deg, rgba(51,0,124,1) 0%, rgba(85,2,153,0.6730042358740371) 60%, rgba(175,0,255,0.404096672848827) 100%);
+}
+
+.userInput-form {
+    display: flex;
+    gap: 1rem;
+    font-size: smaller;
+    align-items: center;
+    width: 100%;
+}
+
+.userInput-form > label {
+    white-space: nowrap;
+    margin-bottom: 0;
+    color: white;
+}
+
+.userInput-form > input {
+    min-width: min(10rem, 50%);
+    max-width: 50vh;
+}
+
+.footer-container {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    padding: 0 0.5em;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 0.8em;
+    opacity: 0.3;
+    user-select: none;
+}
+
+.footer-info > *,
+.footer-info > div > * {
+    margin-bottom: 0.25em;
+}
+
+.search-results-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0.25rem;
+    gap: 0.25em;
+    cursor: pointer;
+}
+
+.currentDay-container {
+    max-width: max(20rem, 50%);
+    margin: 1em auto;
+    border-radius: 0.5rem;
+}
+
+.currentDay-container > .card-title {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 1em auto !important;
+    line-height: 1;
+}
+
+.currentDay-container > .card-body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.weather-description {
+    font-size: 0.8rem;
+}
+
+.current-temperature {
+    font-size: 3rem;
+    position: relative;
+}
+
+.current-temperature > img {
+    position: absolute;
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    top: 1%;
+    right: -1.1rem;
+}
+
+.minmax-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 0.8rem;
+    margin-bottom: 1em;
+}
+
+.next-days-container {
+    margin: 2em auto;
+    max-width: min(100%, 40rem);
+    border-radius: 0.5rem;
+}
+
+.next-days-container > .card-body {
+    padding: 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.daily-weather-info {
+    margin-bottom: 0;
+    display: grid;
+    place-items: center center;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+}
+
+.daily-weather-info > p {
+    margin-bottom: 0;
+}
+
+.daily-weather-info > div > img {
+    height: 4rem;
+    aspect-ratio: 1 / 1;
+}
+
+.arrow-up {
+    color: red !important;
+    display: static !important;
+}
+
+.arrow-down {
+    color: blue !important;
+    display: static !important;
+}
+
+.temp-indicator {
+    display: none !important;
+    margin-bottom: 0% !important;
+}
+
+.extra-info-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin: 0 2%;
+    margin-bottom: 2em;
+}
+
+.extra-info-container > .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    border-radius: 0.5em;
+}
+
+.extra-info-container > .card > div {
+    margin-bottom: 0%;
+}
+
+@media only screen and (min-width: 800px) {
+    .search-results-container {
+        margin: 1rem 3rem;
+        gap: 0.5em;
+        cursor: pointer;
+    }
+
+    .temp-indicator {
+        display: block !important;
+    }
+
+    .extra-info-container {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 10%;
+        margin-bottom: 2em;
+    }
+}
