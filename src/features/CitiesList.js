@@ -37,39 +37,48 @@ function CitiesList(props) {
 		}, +${props?.city?.country}/@${props?.city?.lat},${props?.city?.lon}`
 	}
 
+	console.log(props.city?.state && props?.city?.state.length)
+
+	const displayFormatter = !props.city?.state?.length
+		? "d-flex gap-1"
+		: props.city?.state?.length < 14
+		? "d-flex gap-1"
+		: "d-flex gap-1 flex-column"
+	console.log("displayFormatter", displayFormatter)
+
 	return (
 		<>
 			{props && (
-				<div
-					className="search-results-container"
-					onClick={() => handleCityClick()}
-				>
+				<div className="search-results-container">
 					<ArrowRightIcon sx={{ color: "rgba(51, 0, 124, 1)" }} />
-					<p
-						className="mb-0"
-						style={{
-							color: "white",
-							textShadow: "2px 1px 1px #000000",
-						}}
-					>
-						{props.city?.name}
-					</p>
-					<p
-						className="mb-0"
-						style={{
-							color: "rgba(255, 255, 255, 0.5)",
-							textShadow: "2px 1px 1px #2F2F2F",
-						}}
-					>
-						({props.city.state ? props.city.state + " - " : ""}
-						{props.city.country})
-					</p>
+					<div className={displayFormatter}>
+						<p
+							className="mb-0"
+							style={{
+								color: "white",
+								textShadow: "2px 1px 1px #000000",
+							}}
+							onClick={() => handleCityClick()}
+						>
+							{props.city?.name}
+						</p>
+						<p
+							className="mb-0"
+							style={{
+								color: "rgba(255, 255, 255, 0.5)",
+								textShadow: "2px 1px 1px #2F2F2F",
+							}}
+						>
+							({props.city.state ? props.city.state + " - " : ""}
+							{props.city.country})
+						</p>
+					</div>
 					<Button
 						variant="link"
 						onClick={(e) => openInMaps(e)}
 						style={{ color: "rgba(51, 0, 124, 1)" }}
 					>
-						See in GoogleMaps
+						GoogleMaps
 					</Button>
 				</div>
 			)}

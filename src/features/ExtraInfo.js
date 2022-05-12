@@ -6,7 +6,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt"
 
 function ExtraInfo() {
 	const today = useSelector(selectWeather)?.weatherToday
-	console.log(today)
+	// console.log(today)
 
 	const timeFormatter = (unixTime) => {
 		const date = new Date(unixTime * 1000)
@@ -21,15 +21,17 @@ function ExtraInfo() {
 		<>
 			<div className="extra-info-container">
 				<Card>
-					<div>UV Index: {today.uvi}</div>
+					<div>
+						<span>UV</span> Index: {today.uvi}
+					</div>
 				</Card>
 				<Card>
 					<div>
 						<p className="mb-0">
-							Sunrise: {timeFormatter(today.sunrise)}
+							<span>Sunrise</span>: {timeFormatter(today.sunrise)}
 						</p>
 						<p className="mb-0">
-							Sunset: {timeFormatter(today.sunset)}
+							<span>Sunset</span>: {timeFormatter(today.sunset)}
 						</p>
 					</div>
 				</Card>
@@ -37,13 +39,20 @@ function ExtraInfo() {
 					<div className="d-flex flex-column align-items-center">
 						<ArrowRightAltIcon
 							fontSize="large"
-							sx={{ transform: `rotate(${today.wind_deg}deg)` }}
+							sx={{
+								transform: `rotate(${today.wind_deg + 90}deg)`,
+							}}
 						/>
-						Wind Speed: {Math.floor(today.wind_speed)} Km/h
+						<div>
+							<span>Wind Speed</span>:{" "}
+							{Math.floor(today.wind_speed)} Km/h
+						</div>
 					</div>
 				</Card>
 				<Card>
-					<div>Pressure: {today.pressure}mm/Hg</div>
+					<div>
+						<span>Pressure</span>: {today.pressure}mm/Hg
+					</div>
 				</Card>
 			</div>
 		</>
