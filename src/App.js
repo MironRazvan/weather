@@ -8,6 +8,7 @@ import { useState } from "react"
 import { useSelector } from "react-redux"
 import { selectWeather } from "./features/weather/weatherSlice"
 import { Alert } from "react-bootstrap"
+import Hourly from "./features/Hourly"
 
 function App() {
 	const [citiesList, setCitiesList] = useState([])
@@ -54,6 +55,7 @@ function App() {
 			) : (
 				<>
 					<CurrentDay />
+					<Hourly />
 					<NextDay />
 					<ExtraInfo />
 				</>

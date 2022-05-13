@@ -23,7 +23,7 @@ function CurrentDay() {
 						)}
 					</div>
 					<div className="current-temperature">
-						{Math.floor(weather.weatherToday?.temp)}°
+						{Math.floor(weather.weatherToday?.temp)}
 						<img
 							src={`http://openweathermap.org/img/wn/${weather.weatherToday?.weather[0]?.icon}@2x.png`}
 							alt="current weather"

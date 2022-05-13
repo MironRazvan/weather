@@ -37,14 +37,11 @@ function CitiesList(props) {
 		}, +${props?.city?.country}/@${props?.city?.lat},${props?.city?.lon}`
 	}
 
-	console.log(props.city?.state && props?.city?.state.length)
-
 	const displayFormatter = !props.city?.state?.length
 		? "d-flex gap-1"
 		: props.city?.state?.length < 14
 		? "d-flex gap-1"
 		: "d-flex gap-1 flex-column"
-	console.log("displayFormatter", displayFormatter)
 
 	return (
 		<>
