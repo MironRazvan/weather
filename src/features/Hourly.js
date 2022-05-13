@@ -36,15 +36,8 @@ function Hourly() {
 			: editedTime.getHours()
 	}
 
-	console.log(weather.cityName, ":", timeFormatter(hourly[0]?.dt))
-	console.log("current temp: ", Math.floor(hourly[0]?.temp))
-	hourly[0].pop > 5 &&
-		console.log("rain chance %", Math.round(hourly[0]?.pop / 5) * 5)
-	console.log("weather icon", hourly[0]?.weather[0]?.icon)
-	console.log(hourly[0])
-
 	return (
-		<div className="d-flex justify-content-center mx-2">
+		<div className="hourly-master">
 			<Card className="m-0">
 				<Card.Body className="hourly-container">
 					{[...hourly].map((day, index) => {

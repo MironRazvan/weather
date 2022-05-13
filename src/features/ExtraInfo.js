@@ -20,10 +20,20 @@ function ExtraInfo() {
 	return (
 		<>
 			<div className="extra-info-container">
-				<Card>
+				<Card style={{ position: "relative" }}>
 					<div>
 						<span>UV</span> Index: {today.uvi}
 					</div>
+					<p
+						style={{
+							position: "absolute",
+							top: "0%",
+							left: "3%",
+							fontSize: "0.8rem",
+						}}
+					>
+						UV index
+					</p>
 				</Card>
 				<Card>
 					<div>
@@ -35,24 +45,87 @@ function ExtraInfo() {
 						</p>
 					</div>
 				</Card>
-				<Card>
+				<Card style={{ position: "relative" }}>
 					<div className="d-flex flex-column align-items-center">
 						<ArrowRightAltIcon
 							fontSize="large"
 							sx={{
-								transform: `rotate(${today.wind_deg + 90}deg)`,
+								position: "relative",
+								// transform: "rotate(90deg) scale(2.8)",
+								transform: `rotate(${
+									today.wind_deg + 90
+								}deg) scale(2.8)`,
+								// transform: "scale(4)",
 							}}
 						/>
-						<div>
+						<div
+							style={{
+								content: "",
+								backgroundColor: "var(--card-body)",
+								width: "1.5rem",
+								height: "1.5rem",
+								position: "absolute",
+								top: "35%",
+								borderRadius: "50%",
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+							}}
+						>
+							<p
+								className="m-0"
+								style={{
+									color: "var(--text-accent) !important",
+									fontWeight: "700",
+								}}
+							>
+								{Math.floor(today.wind_speed)}
+							</p>
+						</div>
+
+						<p
+							className="m-0"
+							style={{
+								marginTop: "-50%",
+								padding: "0",
+								fontSize: "0.6rem",
+								position: "absolute",
+								right: "5%",
+								bottom: "5%",
+							}}
+						>
+							Km/h
+						</p>
+						{/* <div>
 							<span>Wind Speed</span>:{" "}
 							{Math.floor(today.wind_speed)} Km/h
-						</div>
+						</div> */}
 					</div>
+					<p
+						style={{
+							position: "absolute",
+							fontSize: "0.8rem",
+							top: "0%",
+							left: "3%",
+						}}
+					>
+						Wind Speed
+					</p>
 				</Card>
-				<Card>
+				<Card style={{ position: "relative" }}>
 					<div>
-						<span>Pressure</span>: {today.pressure}mm/Hg
+						<span>{today.pressure}</span> mm/Hg
 					</div>
+					<p
+						style={{
+							position: "absolute",
+							fontSize: "0.8rem",
+							top: "0%",
+							left: "3%",
+						}}
+					>
+						Air Pressure
+					</p>
 				</Card>
 			</div>
 		</>

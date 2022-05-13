@@ -185,6 +185,13 @@
     filter: drop-shadow(2px 2px 2px var(--text-color))
 }
 
+.hourly-master {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem auto;
+    max-width: min(95%, 40rem);
+}
+
 .hourly-container {
     display: flex;
     font-size: 0.8rem;
@@ -220,12 +227,14 @@
     align-self: start;
     justify-self: center;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
 }
 
 .hourly-info > div:nth-child(3) {
     align-self: end;
     justify-self: center;
     font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
 }
 
 .hourly-image {
@@ -295,4 +304,9 @@
         margin: 0 10%;
         margin-bottom: 2em;
     }
+
+    .hourly-info {
+        padding: 0 1.1rem;
+    }
+
 }
