@@ -171,7 +171,7 @@ function NextDay() {
 													fontWeight: "700",
 												}}
 											>
-												Max Wind Speed
+												Wind Speed
 											</span>
 											: {Math.ceil(day.wind_speed)}
 											Km/h
