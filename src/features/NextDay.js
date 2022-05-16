@@ -60,16 +60,16 @@ function NextDay() {
 												</p>
 											</div>
 											<div className="d-flex align-items-center gap-1">
-												<div className="d-flex flex-column">
+												<div className="d-flex flex-column align-items-center">
 													<ArrowDownwardIcon className="arrow-down" />
 													<p className="temp-indicator">
 														Low
 													</p>
 												</div>
-												{Math.ceil(day.temp.min)}°
+												{Math.ceil(day.temp.night)}°
 											</div>
 											<div className="d-flex align-items-center gap-1">
-												<div className="d-flex flex-column">
+												<div className="d-flex flex-column align-items-center">
 													<ArrowUpwardIcon className="arrow-up" />
 													<p className="temp-indicator">
 														High
@@ -91,7 +91,7 @@ function NextDay() {
 											>
 												Max temperature
 											</span>
-											: {Math.floor(day.temp?.day)}°
+											: {Math.ceil(day.temp?.max)}°
 										</p>
 										<p className="mb-0">
 											<span
@@ -102,7 +102,7 @@ function NextDay() {
 											>
 												Min temperature
 											</span>
-											: {Math.floor(day.temp?.min)}°
+											: {Math.ceil(day.temp?.night)}°
 										</p>
 										<p className="mb-0">
 											<span

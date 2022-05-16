@@ -6,7 +6,6 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt"
 
 function ExtraInfo() {
 	const today = useSelector(selectWeather)?.weatherToday
-	// console.log(today)
 
 	const timeFormatter = (unixTime) => {
 		const date = new Date(unixTime * 1000)
@@ -51,11 +50,9 @@ function ExtraInfo() {
 							fontSize="large"
 							sx={{
 								position: "relative",
-								// transform: "rotate(90deg) scale(2.8)",
 								transform: `rotate(${
 									today.wind_deg + 90
 								}deg) scale(2.8)`,
-								// transform: "scale(4)",
 							}}
 						/>
 						<div
@@ -96,10 +93,6 @@ function ExtraInfo() {
 						>
 							Km/h
 						</p>
-						{/* <div>
-							<span>Wind Speed</span>:{" "}
-							{Math.floor(today.wind_speed)} Km/h
-						</div> */}
 					</div>
 					<p
 						style={{

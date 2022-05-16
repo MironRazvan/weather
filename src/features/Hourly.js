@@ -6,11 +6,9 @@ import { selectWeather } from "./weather/weatherSlice"
 function Hourly() {
 	const hourly = useSelector(selectWeather)?.weatherHourly
 	const weather = useSelector(selectWeather)
-	// console.log(weather.weatherHourly)
-	// console.log(hourly[0])
+	console.log(weather)
 
 	const addTimeOffset = (date = new Date(), timezone, offset) => {
-		// console.log(date.toUTCString("en-GB", { timeZone: timezone }))
 		date.setSeconds(date.getSeconds() + offset)
 		return date.toUTCString("en-US", { timeZone: timezone })
 	}
@@ -21,7 +19,6 @@ function Hourly() {
 
 		const offset =
 			normalTime.getTimezoneOffset() * 60 + weather.timezoneOffset
-		// console.log("offset", offset / 3600, " ore")
 		const editedTime = new Date(
 			addTimeOffset(normalTime, weather.timezone, offset)
 		)
@@ -61,7 +58,7 @@ function Hourly() {
 												</div>
 											)}
 										</div>
-										<div>{Math.floor(day.temp)}°</div>
+										<div>{Math.ceil(day.temp)}°</div>
 									</div>
 									{day && index < 23 && (
 										<div

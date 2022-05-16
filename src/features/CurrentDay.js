@@ -23,7 +23,7 @@ function CurrentDay() {
 						{pascalCase(weather.weather[0]?.description)}
 					</div>
 					<div className="current-temperature">
-						{Math.floor(weather.temp)}
+						{Math.ceil(weather.temp)}
 						<img
 							src={`http://openweathermap.org/img/wn/${weather.weather[0]?.icon}@2x.png`}
 							alt="current weather"
@@ -31,11 +31,11 @@ function CurrentDay() {
 					</div>
 					<div className="minmax-container">
 						<div style={{ color: "blue" }}>
-							L: {Math.floor(nextDay?.temp.min)}°
+							L: {Math.ceil(nextDay?.temp.night)}°
 						</div>
 						<div className="vr" />
 						<div style={{ color: "red" }}>
-							H: {Math.floor(nextDay?.temp.max)}°
+							H: {Math.ceil(nextDay?.temp.day)}°
 						</div>
 					</div>
 				</Card.Body>

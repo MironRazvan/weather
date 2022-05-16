@@ -197,6 +197,10 @@
     font-size: 1rem;
 }
 
+.daily-weather-info > div:nth-child(1) {
+    align-items: start;
+}
+
 .daily-weather-info > div > img {
     height: 4rem;
     aspect-ratio: 1 / 1;
